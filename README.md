@@ -1,19 +1,23 @@
-# Projeto Matrícula CRUD
+# 📘 Projeto Matrícula CRUD
 
-Projeto simples de CRUD para gerenciamento de matrículas e alunos, feito com Python/Django.
+Aplicação desenvolvida em **Python/Django** para gerenciamento de alunos e matrículas, implementando operações de **CRUD (Create, Read, Update, Delete)**.
 
 ---
 
-## Requisitos
+## 🔧 Requisitos
 
 - Python 3.7+  
-- pip  
-- (Opcional) ambiente virtual (**venv** ou **virtualenv**)  
+- pip (gerenciador de pacotes do Python)  
+- Virtualenv (opcional, mas recomendado)  
 - SQLite (já incluso no projeto)  
 
 ---
 
-## Instalação
+## 📥 Instalação e Execução
+
+Copie e cole o bloco abaixo no terminal:
+
+```bash
 # --- COPIAR & COLAR: passos de instalação e execução ---
 # 1) Clonar repositório e entrar na pasta
 git clone https://github.com/victormanoelrego/projeto_matricula_CRUD.git
@@ -23,28 +27,22 @@ cd projeto_matricula_CRUD || exit 1
 python -m venv .venv
 
 # 3) Ativar o ambiente virtual
-# -> Linux / macOS (execute essa linha no terminal Unix):
+# -> Linux / macOS:
 # source .venv/bin/activate
-# -> Windows PowerShell (execute esta linha no PowerShell):
+# -> Windows PowerShell:
 # .venv\Scripts\Activate.ps1
 # -> Windows (cmd.exe):
 # .venv\Scripts\activate.bat
-
-# (Se preferir não ativar, pode chamar diretamente o pip do venv nas linhas abaixo:
-# Linux/macOS: .venv/bin/pip install -r requirements.txt
-# Windows: .venv\Scripts\pip.exe install -r requirements.txt
-# )
 
 # 4) Atualizar pip e instalar dependências
 python -m pip install --upgrade pip setuptools wheel
 pip install -r requirements.txt
 
-# 5) Criar migrações e aplicar (garante que o DB esteja pronto)
+# 5) Criar migrações e aplicar
 python manage.py makemigrations
 python manage.py migrate
 
-# 6) (Opcional) Criar um superuser para acessar o admin
-# execute e siga as instruções interativas:
+# 6) (Opcional) Criar superuser para acessar o admin
 python manage.py createsuperuser
 
 # 7) Rodar servidor de desenvolvimento
@@ -52,4 +50,5 @@ python manage.py runserver 0.0.0.0:8000
 
 # -> Acesse: http://127.0.0.1:8000/ ou http://localhost:8000/
 # --- FIM ---
+
 
