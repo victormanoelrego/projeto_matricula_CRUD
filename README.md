@@ -14,53 +14,42 @@ Projeto simples de CRUD para gerenciamento de matrículas e alunos, feito com Py
 ---
 
 ## Instalação
+# --- COPIAR & COLAR: passos de instalação e execução ---
+# 1) Clonar repositório e entrar na pasta
+git clone https://github.com/victormanoelrego/projeto_matricula_CRUD.git
+cd projeto_matricula_CRUD || exit 1
 
-1. Clone o repositório:
+# 2) Criar ambiente virtual (local: .venv)
+python -m venv .venv
 
-   ```bash
-   git clone https://github.com/victormanoelrego/projeto_matricula_CRUD.git
-   cd projeto_matricula_CRUD
-(Opcional, mas recomendado) Crie e ative um ambiente virtual:
+# 3) Ativar o ambiente virtual
+# -> Linux / macOS (execute essa linha no terminal Unix):
+# source .venv/bin/activate
+# -> Windows PowerShell (execute esta linha no PowerShell):
+# .venv\Scripts\Activate.ps1
+# -> Windows (cmd.exe):
+# .venv\Scripts\activate.bat
 
-No Linux / MacOS:
+# (Se preferir não ativar, pode chamar diretamente o pip do venv nas linhas abaixo:
+# Linux/macOS: .venv/bin/pip install -r requirements.txt
+# Windows: .venv\Scripts\pip.exe install -r requirements.txt
+# )
 
-bash
-Copiar código
-python3 -m venv venv
-source venv/bin/activate
-No Windows:
-
-powershell
-Copiar código
-python -m venv venv
-venv\Scripts\activate
-Instale as dependências com o pip:
-
-bash
-Copiar código
+# 4) Atualizar pip e instalar dependências
+python -m pip install --upgrade pip setuptools wheel
 pip install -r requirements.txt
-Configuração do banco de dados
-O projeto já possui um arquivo db.sqlite3, então não é necessário configurar outro banco por padrão.
 
-Se quiser usar outro banco, ajuste as configurações no arquivo settings.py do Django:
-
-DATABASES → ENGINE, NAME, USER, PASSWORD, etc.
-
-Migrações
-Execute as migrações para preparar o banco de dados:
-
-bash
-Copiar código
+# 5) Criar migrações e aplicar (garante que o DB esteja pronto)
 python manage.py makemigrations
 python manage.py migrate
-Execução
-Para rodar o servidor de desenvolvimento:
 
-bash
-Copiar código
-python manage.py runserver
-Acesse no navegador:
+# 6) (Opcional) Criar um superuser para acessar o admin
+# execute e siga as instruções interativas:
+python manage.py createsuperuser
 
-cpp
-Copiar código
-http://127.0.0.1:8000/
+# 7) Rodar servidor de desenvolvimento
+python manage.py runserver 0.0.0.0:8000
+
+# -> Acesse: http://127.0.0.1:8000/ ou http://localhost:8000/
+# --- FIM ---
+
